@@ -37,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
+        //rb.interpolation = RigidbodyInterpolation.Interpolate;
         readyToJump = true;
     }
 
