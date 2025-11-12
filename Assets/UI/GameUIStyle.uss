@@ -1,0 +1,9 @@
+.hungerbar-size {
+    width: 100%;
+    height: 16px;
+}
+
+.highbar-size {
+    width: 100%;
+    height: 16px;
+}
