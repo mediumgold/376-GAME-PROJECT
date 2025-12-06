@@ -1,23 +1,55 @@
-<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" editor-extension-mode="False">
     <Style src="project://database/Assets/UI/GameUIStyle.uss?fileID=7433441132597879392&amp;guid=32e0dc5ac99cdf544985f5c87f056e0e&amp;type=3#GameUIStyle" />
-    <engine:VisualElement name="hungerBarBackground" class="hungerbar-new" style="position: absolute; top: 6px; background-image: url(&quot;project://database/Assets/Art/barsMMNG1.png?fileID=2800000&amp;guid=54bae25e069922e4a8415fb30c3ff788&amp;type=3#barsMMNG1&quot;); width: 160px; left: 160px; height: 32px;">
-        <engine:VisualElement name="hungerBarMask" style="flex-grow: 1; width: 100%; height: 100%; overflow: hidden; transition-duration: 0.5s; transition-timing-function: ease-in-out;">
-            <engine:VisualElement name="hungerBarFill" style="flex-grow: 1; position: absolute; height: 32px; background-image: url(&quot;project://database/Assets/Art/barsMMNG1.png?fileID=2800000&amp;guid=54bae25e069922e4a8415fb30c3ff788&amp;type=3#barsMMNG1&quot;); width: 160px;" />
+    <engine:VisualElement name="UIRoot" class="ui-root">
+        <engine:VisualElement name="UIContent" enabled="true" class="ui-content">
+            <engine:VisualElement name="TopLeftHUD" class="top-left-hud" style="top: 20px; left: 49px;">
+                <engine:VisualElement name="HungerRow" class="hud-row">
+                    <engine:VisualElement name="hungerIcon" class="hunger-icon" style="background-image: url(&quot;project://database/Assets/Art/UImmng.png?fileID=1551276304&amp;guid=322ee68644ec0b4449b596873f47cd4d&amp;type=3#UImmng_1&quot;);" />
+                    <engine:VisualElement name="hungerBarBackground" class="bar-bg">
+                        <engine:VisualElement name="hungerBarMask" class="bar-mask">
+                            <engine:VisualElement name="hungerBarFill" class="bar-fill" />
+                        </engine:VisualElement>
+                        <engine:Label name="hungerLabel" text="HUNGER" class="bar-label" style="top: -14px; -unity-font-definition: url(&quot;project://database/Assets/Fonts/PixelOperator.ttf?fileID=12800000&amp;guid=36469634d266dcc468d6dd02a9634677&amp;type=3#PixelOperator&quot;); font-size: 16px; left: -3px;" />
+                    </engine:VisualElement>
+                </engine:VisualElement>
+                <engine:VisualElement name="HighRow" class="hud-row">
+                    <engine:VisualElement name="highIcon" class="high-icon" style="background-image: url(&quot;project://database/Assets/Art/UImmng.png?fileID=-1362529591&amp;guid=322ee68644ec0b4449b596873f47cd4d&amp;type=3#UImmng_7&quot;);" />
+                    <engine:VisualElement name="highBarBackground" class="bar-bg">
+                        <engine:VisualElement name="highBarMask" class="bar-mask">
+                            <engine:VisualElement name="highBarFill" class="bar-fill" />
+                        </engine:VisualElement>
+                        <engine:Label name="highLabel" text="HIGH" class="bar-label" style="top: -14px; left: -3px; font-size: 16px; -unity-font-definition: url(&quot;project://database/Assets/Fonts/PixelOperator.ttf?fileID=12800000&amp;guid=36469634d266dcc468d6dd02a9634677&amp;type=3#PixelOperator&quot;);" />
+                    </engine:VisualElement>
+                    <engine:Label name="moneyLabel" text="$000" class="money-label" style="left: -160px; top: 20px; text-overflow: ellipsis; -unity-font-definition: url(&quot;project://database/Assets/Fonts/PixelOperator.ttf?fileID=12800000&amp;guid=36469634d266dcc468d6dd02a9634677&amp;type=3#PixelOperator&quot;); font-size: 16px;" />
+                </engine:VisualElement>
+            </engine:VisualElement>
+            <engine:VisualElement name="MiddleWindow-buy" enabled="true" class="middle-window" style="height: 290px; display: flex; background-color: rgba(0, 0, 0, 0.5);">
+                <engine:VisualElement name="ButtonGrid" class="button-grid">
+                    <engine:Button name="buyButton0" double-click-selects-word="false" class="menu-btn" style="background-color: rgba(58, 121, 187, 0); -unity-text-outline-color: rgba(0, 0, 0, 0);" />
+                    <engine:Button name="buyButton1" class="menu-btn" style="background-color: rgba(56, 56, 56, 0);" />
+                    <engine:Button name="buyButton2" class="menu-btn" style="background-color: rgba(188, 188, 188, 0);" />
+                    <engine:Button name="buyButton3" class="menu-btn" style="background-color: rgba(188, 188, 188, 0);" />
+                    <engine:Button name="buyButton4" class="menu-btn" style="background-color: rgba(188, 188, 188, 0);" />
+                    <engine:Button name="buyButton5" class="menu-btn" style="background-color: rgba(188, 188, 188, 0);" />
+                </engine:VisualElement>
+                <engine:Label name="MiddleText-buy" text="Description goes here..." class="middle-text" style="-unity-font-definition: url(&quot;project://database/Assets/Fonts/PixelOperator.ttf?fileID=12800000&amp;guid=36469634d266dcc468d6dd02a9634677&amp;type=3#PixelOperator&quot;); font-size: 16px; height: 51px; -unity-text-align: upper-left; white-space: normal;" />
+            </engine:VisualElement>
+            <engine:VisualElement name="MiddleWindow-sell" class="middle-window" style="height: 290px; display: none; background-color: rgba(0, 0, 0, 0.5);">
+                <engine:VisualElement name="ButtonGrid" class="button-grid" style="flex-wrap: wrap; align-content: center; width: 70%;">
+                    <engine:Button name="sellButton0" class="menu-btn" style="background-color: rgba(188, 188, 188, 0);" />
+                    <engine:Button name="sellButton1" class="menu-btn" style="background-color: rgba(188, 188, 188, 0);" />
+                    <engine:Button name="sellButton2" class="menu-btn" style="background-color: rgba(188, 188, 188, 0);" />
+                    <engine:Button name="sellButton3" class="menu-btn" style="color: rgba(27, 27, 27, 0.45); background-color: rgba(188, 188, 188, 0);" />
+                </engine:VisualElement>
+                <engine:Label name="MiddleText-sell" text="Description goes here..." class="middle-text" style="-unity-font-definition: url(&quot;project://database/Assets/Fonts/PixelOperator.ttf?fileID=12800000&amp;guid=36469634d266dcc468d6dd02a9634677&amp;type=3#PixelOperator&quot;); font-size: 16px; height: 51px; -unity-text-align: upper-left; flex-wrap: nowrap; white-space: normal;" />
+            </engine:VisualElement>
+            <engine:VisualElement name="InventoryBox" class="inventory-box" style="bottom: 23px; right: 64px;">
+                <engine:VisualElement name="inventoryContainer" class="inventory-container" />
+            </engine:VisualElement>
+            <engine:VisualElement name="EscapeChoices" style="flex-grow: 1; display: none;">
+                <engine:Button text="Hallucination" name="Hallucination" parse-escape-sequences="true" style="position: absolute; width: 96px; height: 48px; top: 407px; left: 372px; -unity-font-definition: url(&quot;project://database/Assets/Fonts/PixelOperator.ttf?fileID=12800000&amp;guid=36469634d266dcc468d6dd02a9634677&amp;type=3#PixelOperator&quot;); background-color: rgba(0, 0, 0, 0.39); border-left-color: rgb(255, 255, 255); border-right-color: rgb(255, 255, 255); border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(255, 255, 255); color: rgb(255, 255, 255);" />
+                <engine:Button text="Manannangal" name="Monster" style="flex-wrap: wrap; flex-direction: row; position: absolute; width: 96px; height: 48px; top: 407px; left: 164px; -unity-font-definition: url(&quot;project://database/Assets/Fonts/PixelOperator.ttf?fileID=12800000&amp;guid=36469634d266dcc468d6dd02a9634677&amp;type=3#PixelOperator&quot;); background-color: rgba(0, 0, 0, 0.39); border-left-color: rgb(255, 255, 255); border-right-color: rgb(255, 255, 255); border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(255, 255, 255); color: rgb(255, 255, 255);" />
+            </engine:VisualElement>
         </engine:VisualElement>
-        <engine:Label text="Label" name="hungerLabel" style="position: absolute; width: 100%; -unity-text-align: middle-left; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; top: 6px; left: 0; color: rgb(255, 255, 255); -unity-font-definition: url(&quot;project://database/Assets/Fonts/PressStart2P-vaV7.ttf?fileID=12800000&amp;guid=75c5e35333e6377489337203113ada70&amp;type=3#PressStart2P-vaV7&quot;); font-size: 6px;" />
     </engine:VisualElement>
-    <engine:VisualElement name="highBarBackground" style="flex-grow: 1; align-items: auto; width: 160px; height: 32px; background-image: url(&quot;project://database/Assets/Art/barsMMNG2.png?fileID=2800000&amp;guid=3831f4561cfac6a43a900ed18164f244&amp;type=3#barsMMNG2&quot;); position: absolute; top: 38px; left: 160px; margin-top: 0; margin-left: 0;">
-        <engine:VisualElement name="highBarMask" style="flex-grow: 1; width: 100%; height: 100%; overflow: hidden; transition-duration: 0.5s; transition-timing-function: ease-in-out;">
-            <engine:VisualElement name="highBarFill" style="flex-grow: 1; position: absolute; height: 32px; background-image: url(&quot;project://database/Assets/Art/barsMMNG1.png?fileID=2800000&amp;guid=54bae25e069922e4a8415fb30c3ff788&amp;type=3#barsMMNG1&quot;); width: 160px;" />
-        </engine:VisualElement>
-        <engine:Label text="Label" name="highLabel" style="position: absolute; width: 100%; -unity-text-align: middle-left; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; top: 6px; left: 0; color: rgb(255, 255, 255); -unity-font-definition: url(&quot;project://database/Assets/Fonts/PressStart2P-vaV7.ttf?fileID=12800000&amp;guid=75c5e35333e6377489337203113ada70&amp;type=3#PressStart2P-vaV7&quot;); font-size: 6px;" />
-    </engine:VisualElement>
-    <engine:VisualElement name="VisualElement" style="flex-grow: 1; margin-top: 110px; margin-right: 0; margin-bottom: 0; margin-left: 0; position: absolute;">
-        <engine:Label text="Label" name="moneyLabel" style="color: rgb(16, 88, 42); margin-left: 0; font-size: 8px; -unity-font-definition: url(&quot;project://database/Assets/Fonts/PressStart2P-vaV7.ttf?fileID=12800000&amp;guid=75c5e35333e6377489337203113ada70&amp;type=3#PressStart2P-vaV7&quot;); margin-top: 0; margin-right: 0; margin-bottom: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; left: 160px; top: -44px; position: absolute;" />
-    </engine:VisualElement>
-    <engine:VisualElement name="InventoryBox" style="flex-grow: 1; position: absolute; background-image: url(&quot;project://database/Assets/Art/96x96InventoryUIMMNG.png?fileID=2800000&amp;guid=a5f0d1ee45b0ec447bd1d3cf58c1aafe&amp;type=3#96x96InventoryUIMMNG&quot;); width: 48px; height: 48px; top: 350px; left: 542px; -unity-background-image-tint-color: rgba(255, 255, 255, 0.64);">
-        <engine:VisualElement name="inventoryContainer" style="flex-grow: 1; position: absolute; width: 48px; height: 48px;" />
-    </engine:VisualElement>
-    <engine:VisualElement name="hungerIcon" style="flex-grow: 0; background-image: url(&quot;project://database/Assets/Art/UImmng.png?fileID=1618998014&amp;guid=322ee68644ec0b4449b596873f47cd4d&amp;type=3#UImmng_13&quot;); width: 32px; flex-basis: auto; height: 32px; background-size: 100% 100%; align-items: center; flex-shrink: 0; top: 6px; left: 125px; position: absolute;" />
-    <engine:VisualElement name="highIcon" style="flex-grow: 0; flex-shrink: 0; width: 32px; height: 32px; background-image: url(&quot;project://database/Assets/Art/UImmng.png?fileID=-1362529591&amp;guid=322ee68644ec0b4449b596873f47cd4d&amp;type=3#UImmng_7&quot;); align-items: center; position: absolute; top: 38px; left: 125px;" />
 </engine:UXML>

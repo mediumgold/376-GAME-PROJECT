@@ -5,6 +5,11 @@ public class PlayerUI : MonoBehaviour
 {
     [SerializeField]
     private TextMeshProUGUI promptText;
+    [SerializeField]
+    //private TextMeshProUGUI textBox;
+    //[SerializeField]
+    //private TextMeshProUGUI textBoxOptions;
+
     void Start()
     {
         

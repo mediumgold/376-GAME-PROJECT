@@ -6,7 +6,16 @@ EditorUserSettings:
   serializedVersion: 4
   m_ConfigSettings:
     RecentlyUsedSceneGuid-0:
+      value: 020704005c505b095d5a0f2115250a44404f197a797820677a284b36b1e16c3e
+      flags: 0
+    RecentlyUsedSceneGuid-1:
       value: 5a5757560101590a5d0c0e24427b5d44434e4c7a7b7a23677f2b4565b7b5353a
+      flags: 0
+    RecentlyUsedSceneGuid-2:
+      value: 54540100000c5158540a097248210b4447154f7e757d74687f70196be4b76469
+      flags: 0
+    RecentlyUsedSceneGuid-3:
+      value: 51550703500d5b0c5457587046755e444515197c2f7d27667f2f4931b6b1366d
       flags: 0
     vcSharedLogLevel:
       value: 0d5e400f0650
@@ -25,4 +34,6 @@ EditorUserSettings:
   m_VCHierarchyOverlayIcons: 1
   m_VCOtherOverlayIcons: 1
   m_VCAllowAsyncUpdate: 1
+  m_VCScanLocalPackagesOnConnect: 1
   m_ArtifactGarbageCollection: 1
+  m_CompressAssetsOnImport: 1

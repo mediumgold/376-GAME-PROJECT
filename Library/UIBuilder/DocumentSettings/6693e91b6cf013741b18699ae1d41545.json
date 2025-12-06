@@ -1,15 +1,15 @@
 {
     "UxmlGuid": "6693e91b6cf013741b18699ae1d41545",
     "UxmlPath": "Assets/UI/status.uxml",
-    "CanvasX": 0,
+    "CanvasX": -66,
     "CanvasY": 0,
     "CanvasWidth": 640,
-    "CanvasHeight": 480,
+    "CanvasHeight": 414,
     "MatchGameView": false,
-    "ZoomScale": 2.75,
+    "ZoomScale": 0.8999999761581421,
     "PanOffset": {
-        "x": -701.54296875,
-        "y": -477.57794189453127
+        "x": 143.70361328125,
+        "y": 101.36504364013672
     },
     "ColorModeBackgroundOpacity": 1.0,
     "ImageModeCanvasBackgroundOpacity": 1.0,

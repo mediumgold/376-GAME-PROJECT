@@ -15,6 +15,11 @@ public class Item : Interactable
 
     public Player player;
     public float value;
+    public int sellValue;
+    public int buyPrice;
+
+    [TextArea]
+    public string description;
 
     private Item itemToUse;
     private Inventory inventory;

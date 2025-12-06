@@ -1,5 +1,12 @@
 <linker>
 	<assembly fullname="Assembly-CSharp">
+		<type fullname="Convenience" preserve="nothing"/>
+		<type fullname="Dealer" preserve="nothing"/>
+		<type fullname="DialogueObject" preserve="nothing"/>
+		<type fullname="DialogueUI" preserve="nothing"/>
+		<type fullname="EscapeChoiceUI" preserve="nothing"/>
+		<type fullname="FlashManager" preserve="nothing"/>
+		<type fullname="GameFlowManager" preserve="nothing"/>
 		<type fullname="GameUIHandler" preserve="nothing"/>
 		<type fullname="HighTicker" preserve="nothing"/>
 		<type fullname="HungerTicker" preserve="nothing"/>
@@ -9,11 +16,20 @@
 		<type fullname="ItemGeneration" preserve="nothing"/>
 		<type fullname="Manananggal" preserve="nothing"/>
 		<type fullname="MoveCamera" preserve="nothing"/>
+		<type fullname="NPC" preserve="nothing"/>
+		<type fullname="NPCInventory" preserve="nothing"/>
+		<type fullname="NPCManager" preserve="nothing"/>
+		<type fullname="OptionSelectorUI" preserve="nothing"/>
+		<type fullname="PawnShop" preserve="nothing"/>
 		<type fullname="Player" preserve="nothing"/>
 		<type fullname="PlayerInteract" preserve="nothing"/>
 		<type fullname="PlayerLook" preserve="nothing"/>
 		<type fullname="PlayerMotor" preserve="nothing"/>
 		<type fullname="PlayerUI" preserve="nothing"/>
+		<type fullname="SceneLoader" preserve="nothing"/>
+		<type fullname="ShopUI" preserve="nothing"/>
+		<type fullname="TypewriterEffect" preserve="nothing"/>
+		<type fullname="UIAligner" preserve="nothing"/>
 	</assembly>
 	<assembly fullname="Unity.2D.PixelPerfect">
 		<type fullname="UnityEngine.U2D.PixelPerfectCamera" preserve="nothing"/>
@@ -80,6 +96,7 @@
 		<type fullname="UnityEngine.Renderer" preserve="nothing"/>
 		<type fullname="UnityEngine.Rendering.GraphicsSettings" preserve="nothing"/>
 		<type fullname="UnityEngine.RenderSettings" preserve="nothing"/>
+		<type fullname="UnityEngine.Rigidbody" preserve="nothing"/>
 		<type fullname="UnityEngine.RuntimeAnimatorController" preserve="nothing"/>
 		<type fullname="UnityEngine.Shader" preserve="nothing"/>
 		<type fullname="UnityEngine.SkinnedMeshRenderer" preserve="nothing"/>
@@ -97,6 +114,7 @@
 	</assembly>
 	<assembly fullname="UnityEngine.UI">
 		<type fullname="UnityEngine.EventSystems.EventSystem" preserve="nothing"/>
+		<type fullname="UnityEngine.UI.Button" preserve="nothing"/>
 		<type fullname="UnityEngine.UI.CanvasScaler" preserve="nothing"/>
 		<type fullname="UnityEngine.UI.GraphicRaycaster" preserve="nothing"/>
 		<type fullname="UnityEngine.UI.Image" preserve="nothing"/>

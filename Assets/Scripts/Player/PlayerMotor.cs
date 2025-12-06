@@ -66,6 +66,18 @@ public class PlayerMotor : MonoBehaviour
         }
         controller.Move(playerVelocity * Time.deltaTime);
         //Debug.Log(playerVelocity.y);
+
+        // Footstep sounds: play different loops based on movement & sprinting
+        bool isMoving = input.sqrMagnitude > 0.01f;
+        if (isMoving && isGrounded)
+        {
+            string key = sprinting ? "fast_walk" : "slow_walk";
+            SoundManager.Instance?.PlayLoopSFX(key);
+        }
+        else
+        {
+            SoundManager.Instance?.StopLoopSFX();
+        }
     }
 
     public void Jump()
@@ -100,6 +112,7 @@ public class PlayerMotor : MonoBehaviour
     public void Scroll(float delta)
     {
         if (inventory == null) return;
+
 
         // Add a small deadzone so tiny mouse-wheel values or drifts don’t spam
         if (delta > 0.1f)

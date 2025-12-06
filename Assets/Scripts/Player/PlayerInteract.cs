@@ -5,11 +5,13 @@ public class PlayerInteract : MonoBehaviour
     private Camera cam;
 
     [SerializeField]
-    private float distance = 3f;
+    private float distance = 4f;
     [SerializeField]
     private LayerMask mask;
+
     private PlayerUI playerUI;
     private InputManager inputManager;
+
     void Start()
     {
         cam = GetComponent<PlayerLook>().cam;
@@ -17,22 +19,31 @@ public class PlayerInteract : MonoBehaviour
         inputManager = GetComponent<InputManager>();
     }
 
-    // Update is called once per frame
     void Update()
     {
+        if (inputManager == null) return;
+
+        if (inputManager.InDialogue || inputManager.InOptionSelect || inputManager.InteractCooldownActive || inputManager.InShop || inputManager.InEscapeChoice)
+        {
+            playerUI.UpdateText(string.Empty);
+            return;
+        }
+
         playerUI.UpdateText(string.Empty);
-        //creat a ray at the center of the camera, shooting outwards.
+
         Ray ray = new Ray(cam.transform.position, cam.transform.forward);
         Debug.DrawRay(ray.origin, ray.direction * distance);
-        RaycastHit hitInfo;
-        if (Physics.Raycast(ray, out hitInfo, distance, mask))
+
+        if (Physics.Raycast(ray, out RaycastHit hitInfo, distance, mask))
         {
-            if(hitInfo.collider.GetComponent<Interactable>() != null)
+            Interactable interactable = hitInfo.collider.GetComponent<Interactable>();
+            if (interactable != null)
             {
-                Interactable interactable = hitInfo.collider.GetComponent<Interactable>();
-                playerUI.UpdateText(hitInfo.collider.GetComponent<Interactable>().promptMessage);
-                if (inputManager.onFoot.Interact.triggered)
+                playerUI.UpdateText(interactable.promptMessage);
+
+                if (inputManager.onFoot.Interact.WasPerformedThisFrame())
                 {
+                    Debug.Log("INTERACT pressed: calling BaseInteract()");
                     interactable.BaseInteract();
                 }
             }

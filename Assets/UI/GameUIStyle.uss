@@ -1,9 +1,194 @@
-.hungerbar-size {
+/* ---------- ROOT & SCALING ---------- */
+
+.ui-root {
+    position: absolute;
     width: 100%;
-    height: 16px;
+    height: 100%;
+    justify-content: center;
+    align-items: center;   /* centers 640x480 inside window */
 }
 
-.highbar-size {
-    width: 100%;
-    height: 16px;
+.ui-content {
+    position: relative;
+    width: 640px;
+    height: 480px;
 }
+
+
+/* ---------- TOP-LEFT HUD ---------- */
+
+.top-left-hud {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    flex-direction: column;
+    /* gap: 10px; */
+}
+
+.hud-row {
+    flex-direction: row;
+    align-items: center;
+    /* gap: 6px; */
+}
+
+
+/* ICONS */
+
+.hunger-icon {
+    width: 32px;
+    height: 32px;
+    background-image: url(project://database/Assets/Art/UImmng.png);
+    background-size: 100% 100%;
+}
+
+.high-icon {
+    width: 32px;
+    height: 32px;
+    background-image: url(project://database/Assets/Art/UImmng.png);
+    background-size: 100% 100%;
+}
+
+
+/* ---------- BARS ---------- */
+
+.bar-bg {
+    width: 160px;
+    height: 32px;
+    background-image: url(project://database/Assets/Art/barsMMNG2.png);
+    background-size: 100% 100%;
+    position: relative;
+}
+
+.bar-mask {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.bar-fill {
+    width: 160px;
+    height: 32px;
+    position: absolute;
+    background-image: url(project://database/Assets/Art/barsMMNG1.png);
+    background-size: 100% 100%;
+}
+
+.bar-label {
+    position: absolute;
+    left: 4px;
+    top: 6px;
+    font-size: 6px;
+    color: white;
+}
+
+
+/* ---------- MONEY LABEL ---------- */
+
+.money-label {
+    font-size: 8px;
+    margin-top: 2px;
+    color: rgb(16, 88, 42);
+}
+
+
+/* ---------- CENTER WINDOW ---------- */
+
+.middle-window {
+    width: 380px;
+    height: 209px;
+    position: absolute;
+
+    left: 130px;  /* centers window horizontally */
+    top: 135px;   /* centers vertically */
+
+    background-image: url(project://database/Assets/Art/whiteSapre.png);
+    background-size: 100% 100%;
+    -unity-background-image-tint-color: rgba(0, 0, 0, 0.39);
+}
+
+
+/* ---------- INVENTORY BOX ---------- */
+
+.inventory-box {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    bottom: 15px;
+    right: 15px;
+    background-image: url(project://database/Assets/Art/96x96InventoryUIMMNG.png);
+    background-size: 100% 100%;
+}
+
+.inventory-container {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+}
+
+
+/* ---------- MIDDLE WINDOW LAYOUT ---------- */
+
+.middle-window {
+    width: 380px;
+    height: 262px;
+    position: absolute;
+    left: 130px;
+    top: 100px;
+    background-image: url(project://database/Assets/Art/whiteSapre.png);
+    background-size: 100% 100%;
+    -unity-background-image-tint-color: rgba(0,0,0,0.39);
+
+    flex-direction: column;
+    justify-content: flex-start; /* push content upward */
+    align-items: center;
+    padding: 10px;
+    /* gap: 10px; */
+}
+
+/* BUTTON GRID */
+
+.button-grid {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    /* gap: 8px; */
+    margin-top: 5px; /* pushes buttons slightly upward */
+}
+
+/* INDIVIDUAL BUTTONS */
+
+.menu-btn {
+    width: 96px;
+    height: 96px;
+    font-size: 8px;
+}
+
+/* TEXT BOX AT BOTTOM */
+
+.middle-text {
+    width: 100%;
+    height: 40px;
+    font-size: 12px;
+    color: white;
+    background-color: rgba(0,0,0,0.5);
+    text-align: center;
+
+    margin-top: auto; /* pushes it to the bottom */
+    padding: 6px;
+}
+
+.shop-selected {
+    border-width: 2px;
+    border-radius: 2px;
+    border-color: yellow;
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+
+    /* optional slight tint so it's obvious */
+    /*-unity-background-image-tint-color: rgba(255, 255, 0, 0.35);*/
+}
+
